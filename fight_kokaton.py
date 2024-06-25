@@ -161,11 +161,17 @@ def main():
             pg.display.update()
             time.sleep(1)
             return
-
+        if bomb is not None:
+            if beam is not None:
+                if bomb.rct.collidedict(beam.rct):
+                    bomb = None
+                    beam = None
         key_lst = pg.key.get_pressed()
         bird.update(key_lst, screen)
         if beam is not None:
-            beam.update(screen)   
+            beam.update(screen) 
+        if bomb is None:
+            bomb.update(screen)  
         bomb.update(screen)
         pg.display.update()
         tmr += 1
