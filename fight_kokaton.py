@@ -144,6 +144,7 @@ class Score:
         self.score = 0
         self.img = self.fonto.render(f"スコア：{self.score}", 0,(0, 0, 255))
         self.rct = (100,HEIGHT-50)
+
     def update(self,screen):
         self.img = self.fonto.render(f"スコア：{self.score}", 0, (0,0,255))
         screen.blit(self.img, self.rct)
